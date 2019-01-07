@@ -15,6 +15,8 @@ Launch tensorboard on multiple directories in an easy way.
 ''')
 parser.add_argument('--port', default=6006, type=int,
                     help='The port to use for tensorboard')
+parser.add_argument('--host', default="0.0.0.0", type=str,
+                    help='The host to use for tensorboard')
 parser.add_argument('--quiet', '-q', action='store_true',
                     help='Run in silent mode')
 parser.add_argument('--auto', action='append', nargs='?',
@@ -106,6 +108,7 @@ def main():
 
     cmd = ['tensorboard',
            '--port', str(port),
+           '--host', str(args.host),
            '--logdir', ','.join(["%s:%s" % (os.path.basename(s), s) for s in args.dirs]),
            # TODO make additional TF parameters configurable
            '--samples_per_plugin', 'images=100',

@@ -8,7 +8,7 @@ This is a random collection of utilities for inspecting TensorFlow summary files
 ### Install
 
 ```
-pip install -I git+https://github.com/wookayin/tensorboard-tools
+pip install -I git+https://github.com/hyperconnect/tensorboard-tools.git
 ```
 
 ## `tb`: Launch TensorBoard
